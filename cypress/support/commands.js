@@ -25,5 +25,26 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 Cypress.Commands.add('login', (username, password) => {
-    
+    //Insert login information using the UI
+    cy.get('#email')
+      .type(username, {force:true})
+    cy.get('#password')
+      .type(password, {force:true})
+
+    //Click login button
+    cy.get('button')
+     .contains('Login')
+     .click()
+
+    //Wait action so all the page loads
+    cy.wait(2500)
+})
+
+Cypress.Commands.add('acceptCookies', () => {
+    //Accept cookies button using UI
+    cy.get('#onetrust-accept-btn-handler')
+      .click()
+
+    //Wait action so all the page loads
+    cy.wait(2500)
 })
