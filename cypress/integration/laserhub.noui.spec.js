@@ -9,11 +9,12 @@ beforeEach(() => {
 describe('Cookie Test', () => {
 
   it.only('Login with cookie', () => {
-
+    
+    //Accept cookies with a request
     cy.acceptCookies()
 
-    cy.login(login.username, login.password)
+    cy.loginRequest()
 
-    cy.getCookies().should('exist')
+    
   })
 })
