@@ -51,29 +51,19 @@ Cypress.Commands.add('acceptCookies', () => {
   cy.wait(2500)
 })
 
-Cypress.Commands.add('acceptCookiesRequest', () => {
+Cypress.Commands.add('setCookies', () => {
 
-  cy.request('https://app.laserhub.com/js/deprecation-modal.js')
+  cy.setCookie('OptanonAlertBoxClosed', '2022-07-04T20:52:53.475Z')
 
 })
 
 Cypress.Commands.add('loginRequest', () => {
 
-  let body = {
-    email: "e.ioannidis+testing_worktask@laserhub.com",
-    password: "l0vet3sting@"
-  }
+let body = {
+  email: login.username,
+  password: login.password
+}
 
   cy.request("POST", "https://app.laserhub.com/api/login", body)
-  /*
-  cy.request({
-    method: "POST",
-    url: "https://app.laserhub.com/api/login",
-    body: {
-      email: "e.ioannidis+testing_worktask@laserhub.com",
-      password: "l0vet3sting@"
-    }
-  })
-  */
 
 })
