@@ -19,6 +19,8 @@ describe('Laserhub login test', () => {
     cy.getCookie('session_laserhub')
       .should('not.be.empty')
 
+    //Read session_laserhub content
+
   })
 })
 
