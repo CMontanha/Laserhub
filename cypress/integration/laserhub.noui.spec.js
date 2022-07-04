@@ -19,6 +19,13 @@ describe('Laserhub login test', () => {
     cy.getCookie('session_laserhub')
       .should('not.be.empty')
 
+
+    cy.request('https://app.laserhub.com/api/users/me').then((response) => {
+      expect(response.body).to.have.property('lastName')
+      expect(response.body.lastName).to.eq('Testy')
+      expect(response.status).to.eq('200')
+    })
+
     //Read session_laserhub content
 
   })
