@@ -67,7 +67,7 @@ describe('Cannot login with wrong information', () => {
 
 describe('Logout works', () => {
 
-  it.only('Login and logout', () => {
+  it('Login and logout', () => {
 
     cy.loginRequest().then((response) => {
       cy.visit('https://app.laserhub.com' + response.body.redirectURL)
