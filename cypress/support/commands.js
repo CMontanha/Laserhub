@@ -67,3 +67,18 @@ let body = {
   cy.request("POST", "https://app.laserhub.com/api/login", body)
 
 })
+
+Cypress.Commands.add('wrongLoginRequest', (log, pwd) => {
+
+  let body = {
+    email: log,
+    password: pwd
+  }
+
+  cy.request({
+    method: "POST",
+    url: "https://app.laserhub.com/api/login",
+    body: body,
+    failOnStatusCode: false
+  })
+})
