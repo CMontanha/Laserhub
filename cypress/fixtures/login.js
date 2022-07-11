@@ -1,7 +1,7 @@
 const login = {
-  username: 'e.ioannidis+testing_worktask@laserhub.com',
-  password: 'l0vet3sting@',
-  wrongUsername: 'e.ioannidis+testing_worktask@wrong.com',
+  username: 'REPLACE_WITH_USERNAME',
+  password: 'REPLACE_WITH_PASSWORD',
+  wrongUsername: 'wrong@wrong.com',
   wrongPassword: 'wrong',
 };
 
